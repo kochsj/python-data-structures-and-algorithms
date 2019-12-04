@@ -38,4 +38,19 @@ def test_seven_value_exists_longer_list_at_mid():
 def test_eight_value_exists_longer_list_not_at_mid():
     expected = 2
     actual = binary_search([4,8,15,16,23,42], 15)
-    assert expected == actual       
+    assert expected == actual
+
+def test_nine_value_right_of_middle():
+    expected = 4
+    actual = binary_search([4,8,15,16,23,42], 23)
+    assert expected == actual
+
+def test_ten_value_right_of_middle_last_index():
+    expected = 7
+    actual = binary_search([4,8,15,16,23,42,55,90], 90)
+    assert expected == actual
+
+def test_eleven_value_left_of_middle_first_index():
+    expected = 0
+    actual = binary_search([4,8,15,16,23,42], 4)
+    assert expected == actual

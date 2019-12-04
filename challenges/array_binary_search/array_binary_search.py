@@ -6,7 +6,6 @@ def binary_search(lst=[], value=None):
         right_index = (len(lst)-1)
         while left_index <= right_index:
             middle = left_index + (right_index) + 1 // 2
-            print(middle)
             if value == lst[middle]:
                 right_index = -1
                 return middle
