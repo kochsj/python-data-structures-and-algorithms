@@ -1,5 +1,9 @@
 from array_binary_search import binary_search
 
+def test_zero_one_parameter():
+    expected = -1
+    actual = binary_search([4,8,15,16,23,42])
+    assert expected == actual
 def test_one_no_parameters():
     expected = -1
     actual = binary_search()
@@ -54,3 +58,23 @@ def test_eleven_value_left_of_middle_first_index():
     expected = 0
     actual = binary_search([4,8,15,16,23,42], 4)
     assert expected == actual
+
+########################
+# Stretch Goal
+# ######################
+
+def test_twelve_benchmark_list_length_100(benchmark):
+    result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(100)), 'value': 23}, iterations=1)
+    assert result == 23
+
+def test_thirteen_benchmark_list_length_1000(benchmark):
+    result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(1000)), 'value': 230}, iterations=1)
+    assert result == 230 
+
+def test_fourteen_benchmark_list_length_10000(benchmark):
+    result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(10000)), 'value': 2300}, iterations=1)
+    assert result == 2300
+
+def test_fifteen_benchmark_list_length_100000(benchmark):
+    result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(100000)), 'value': 23000}, iterations=1)
+    assert result == 23000 
