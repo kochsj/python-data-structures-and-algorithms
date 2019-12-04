@@ -1,4 +1,4 @@
-def binary_search(lst, value):
+def binary_search(lst=[], value=None):
     if value not in lst:
         return -1
     else:
