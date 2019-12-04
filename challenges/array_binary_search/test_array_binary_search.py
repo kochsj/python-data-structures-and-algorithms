@@ -24,3 +24,8 @@ def test_five_non_integer_value():
     expected = -1
     actual = binary_search([4,8,15,16,23,42], 'apple')
     assert expected == actual
+
+def test_six_value_exists_short_list():
+    expected = 15
+    actual = binary_search([15], 15)
+    assert expected == actual
