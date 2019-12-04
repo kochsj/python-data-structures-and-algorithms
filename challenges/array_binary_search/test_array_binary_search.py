@@ -26,6 +26,16 @@ def test_five_non_integer_value():
     assert expected == actual
 
 def test_six_value_exists_short_list():
-    expected = 15
+    expected = 0
     actual = binary_search([15], 15)
     assert expected == actual
+
+def test_seven_value_exists_longer_list_at_mid():
+    expected = 3
+    actual = binary_search([4,8,15,16,23,42], 16)
+    assert expected == actual   
+
+def test_eight_value_exists_longer_list_not_at_mid():
+    expected = 2
+    actual = binary_search([4,8,15,16,23,42], 15)
+    assert expected == actual       
