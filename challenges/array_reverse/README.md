@@ -1,9 +1,9 @@
 # Data-Structures-and-Algorithms
 
 # TABLE OF CONTENTS
-### 1. Code Challenge One - [Array_Reverse](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_reverse.py)
-### 2. Code Challenge One - [Array_Shift](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_shift)
-### Code Challenge One - Array_Reverse
+### 1. Code Challenge One - [Array_Reverse](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_reverse.py)<br>2. Code Challenge Two - [Array_Shift](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_shift)
+
+##### Code Challenge One - Array_Reverse
 Problem domain:
     Write a function that takes in a list and prints a new list in the reverse order
 Visual:
