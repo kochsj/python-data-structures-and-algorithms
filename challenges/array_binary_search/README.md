@@ -17,4 +17,4 @@ Algorithm:
 #### Approach & Efficiency
 For this challenge I worked with Amy. We set out to write a simple function (d.r.y) that matched the algorithm we determined beforehand. It appears that this algorithm would be O(N) performance.
 #### Solution
-![array_shift](../../assets/array_binary_search.jpeg)
+![array_binary_search](../../assets/array_binary_search.jpeg)
