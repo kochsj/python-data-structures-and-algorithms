@@ -1,11 +1,12 @@
 class Linked_List:
     """
-    Requires two parameters: head, value
-    Optional parameter: next
-        Head = node address
-        Value = value held in the node
-        Next = value pointing to the next node
+    Creates an instance of a linked list
+    Optional parameter: head
+        Head = node address (value)
     """
+
+
+
     def __init__(self, head=None):
         self.head = head
 
@@ -26,7 +27,6 @@ class Linked_List:
         new_node.next_node = self.head
         self.head = new_node
 
-
     def includes(self, value):
         """
         Takes any value as an argument and returns true or false
@@ -34,12 +34,18 @@ class Linked_List:
         """
         current = self.head
         while current:
-            print(current)
             if str(current) == value:
                 return True
             else:
                 current = current.next_node
         return False
+    def return_list(self):
+        current = self.head
+        collection_of_values = []
+        while current:
+            collection_of_values.append(str(current))
+            current = current.next_node
+        return collection_of_values
 
 class Node:
     """
