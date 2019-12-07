@@ -27,7 +27,6 @@ class Linked_List:
         self.head = new_node
 
 
-
     def includes(self):
         """
         Takes any value as an argument and returns true or false
@@ -45,6 +44,9 @@ class Node:
         self.value = value
         self.next = next_node
 
+    def __repr__(self):
+        return self.value
+
     def get_data(self):
         return self.value
     def get_next(self):
@@ -52,4 +54,4 @@ class Node:
     def set_next(self, new_next):
         self.next_node = new_next
 
-
+assert Node('Node_1').value == 'Node_1'
