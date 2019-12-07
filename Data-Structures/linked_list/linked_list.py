@@ -6,20 +6,28 @@ class Linked_List:
         Value = value held in the node
         Next = value pointing to the next node
     """
-    def __init__(self, head, value, next=''):
+    def __init__(self, head=None):
         self.head = head
-        self.linked_list = []
+
     def __repr__(self):
-        pass
+        return "This is a linked list."
+
     def __str__(self):
         """
         Returns a string representing all values in the linked list.
         """
-        pass
-    def insert(self):
+        return f"The values of this list are {values}. Which total {len(values)} add up to {sum}."
+
+    def insert(self, value):
         """
         Takes any value as an argument and adds a new node with that value to the head of the list
         """
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
+
+
+
     def includes(self):
         """
         Takes any value as an argument and returns true or false
@@ -33,8 +41,15 @@ class Node:
     Next = value pointing to the next node
     Value = value held in the node
     """
-    def __init__(self, value, next):
+    def __init__(self, value, next_node=None):
         self.value = value
-        self.next = next
+        self.next = next_node
 
-# help(Linked_List)
+    def get_data(self):
+        return self.value
+    def get_next(self):
+        return self.next_node
+    def set_next(self, new_next):
+        self.next_node = new_next
+
+
