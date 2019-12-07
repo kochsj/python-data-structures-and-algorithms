@@ -4,9 +4,6 @@ class Linked_List:
     Optional parameter: head
         Head = node address (value)
     """
-
-
-
     def __init__(self, head=None):
         self.head = head
 
@@ -17,7 +14,8 @@ class Linked_List:
         """
         Returns a string representing all values in the linked list.
         """
-        return f"The values of this list are {values}. Which total {len(values)} add up to {sum}."
+        values = self.return_list()
+        return f"The values of this list are {values}. A total of {len(values)} nodes."
 
     def insert(self, value):
         """
@@ -40,12 +38,15 @@ class Linked_List:
                 current = current.next_node
         return False
     def return_list(self):
-        current = self.head
-        collection_of_values = []
-        while current:
-            collection_of_values.append(str(current))
-            current = current.next_node
-        return collection_of_values
+        try:
+            current = self.head
+            collection_of_values = []
+            while current:
+                collection_of_values.append(str(current))
+                current = current.next_node
+            return collection_of_values
+        except TypeError:
+            return 'For testing, Please input strings.'
 
 class Node:
     """
@@ -66,7 +67,7 @@ class Node:
     def set_next(self, new_next):
         self.next_node = new_next
 
-# empty_list = Linked_List()
-# empty_list.insert('Node_1')
-# empty_list.insert('Node_2')
-# empty_list.includes('Node_1')
+empty_list = Linked_List()
+empty_list.insert('Node_1')
+empty_list.insert('Node_2')
+print(empty_list)
