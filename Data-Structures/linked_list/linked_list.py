@@ -23,16 +23,23 @@ class Linked_List:
         Takes any value as an argument and adds a new node with that value to the head of the list
         """
         new_node = Node(value)
-        new_node.next = self.head
+        new_node.next_node = self.head
         self.head = new_node
 
 
-    def includes(self):
+    def includes(self, value):
         """
         Takes any value as an argument and returns true or false
         Checks if that value exists as a Node’s value somewhere within the list.
         """
-        pass
+        current = self.head
+        while current:
+            print(current)
+            if str(current) == value:
+                return True
+            else:
+                current = current.next_node
+        return False
 
 class Node:
     """
@@ -42,11 +49,10 @@ class Node:
     """
     def __init__(self, value, next_node=None):
         self.value = value
-        self.next = next_node
+        self.next_node = next_node
 
     def __repr__(self):
         return self.value
-
     def get_data(self):
         return self.value
     def get_next(self):
@@ -54,4 +60,7 @@ class Node:
     def set_next(self, new_next):
         self.next_node = new_next
 
-assert Node('Node_1').value == 'Node_1'
+# empty_list = Linked_List()
+# empty_list.insert('Node_1')
+# empty_list.insert('Node_2')
+# empty_list.includes('Node_1')
