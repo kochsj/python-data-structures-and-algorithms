@@ -63,18 +63,18 @@ def test_eleven_value_left_of_middle_first_index():
 # Stretch Goal
 # ######################
 
-def test_twelve_benchmark_list_length_100(benchmark):
-    result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(100)), 'value': 23}, iterations=1)
-    assert result == 23
+# def test_twelve_benchmark_list_length_100(benchmark):
+#     result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(100)), 'value': 23}, iterations=1)
+#     assert result == 23
 
-def test_thirteen_benchmark_list_length_1000(benchmark):
-    result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(1000)), 'value': 230}, iterations=1)
-    assert result == 230 
+# def test_thirteen_benchmark_list_length_1000(benchmark):
+#     result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(1000)), 'value': 230}, iterations=1)
+#     assert result == 230 
 
-def test_fourteen_benchmark_list_length_10000(benchmark):
-    result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(10000)), 'value': 2300}, iterations=1)
-    assert result == 2300
+# def test_fourteen_benchmark_list_length_10000(benchmark):
+#     result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(10000)), 'value': 2300}, iterations=1)
+#     assert result == 2300
 
-def test_fifteen_benchmark_list_length_100000(benchmark):
-    result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(100000)), 'value': 23000}, iterations=1)
-    assert result == 23000 
+# def test_fifteen_benchmark_list_length_100000(benchmark):
+#     result = benchmark.pedantic(binary_search, kwargs={'lst': list(range(100000)), 'value': 23000}, iterations=1)
+#     assert result == 23000 
