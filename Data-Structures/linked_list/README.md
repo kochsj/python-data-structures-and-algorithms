@@ -62,3 +62,5 @@ Sat Dec 07 2019 14:24:42<br>Created linked list and node classes. Developed test
 
 Tue Dec 10 2019 13:37:24<br>Created new linked list methods. Append, insert_before, insert_after, kth_from_end, and find_the_middle. Devloped tests to ensure proper functionality.
 
+![Class 07](../../assets/kth_value.jpeg)
+
