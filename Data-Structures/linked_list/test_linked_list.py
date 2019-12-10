@@ -1,10 +1,54 @@
 import pytest
-from linked_list import Node, Linked_List
+from linked_list import Node, LinkedList
+
+# creates linked lists of varrying numbers of nodes:
+# one node
+@pytest.fixture()
+def list_one():
+    empty_list = LinkedList()
+    empty_list.insert('Node_1')
+    return empty_list
+
+# two nodes
+@pytest.fixture()
+def list_two():
+    empty_list = LinkedList()
+    empty_list.insert('Node_1')
+    empty_list.insert('Node_2')
+    return empty_list
+
+# six nodes
+@pytest.fixture()
+def list_many():
+    empty_list = LinkedList()
+    empty_list.insert('Node_1')
+    empty_list.insert('Node_2')
+    empty_list.insert('Node_3')
+    empty_list.insert('Node_4')
+    empty_list.insert('Node_5')
+    empty_list.insert('Node_6')
+    return empty_list
+
+# ten nodes
+@pytest.fixture()
+def list_ten_integer():
+    empty_list = LinkedList()
+    empty_list.insert(1)
+    empty_list.insert(2)
+    empty_list.insert(3)
+    empty_list.insert(4)
+    empty_list.insert(5)
+    empty_list.insert(6)
+    empty_list.insert(7)
+    empty_list.insert(8)
+    empty_list.insert(9)
+    empty_list.insert(10)
+    return empty_list
 
 # Can successfully instantiate an empty linked list
 def test_empty_linked_list():
-    instance_of_linked_list = Linked_List()
-    assert isinstance(instance_of_linked_list, Linked_List) == True
+    instance_of_linked_list = LinkedList()
+    assert isinstance(instance_of_linked_list, LinkedList) == True
 
 # Can properly insert into the linked list
 def test_instance_of_node():
@@ -120,55 +164,44 @@ def test_insert_after_end(list_many):
     list_many.insert_after('Node_1', 'Hello world')
     assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1', 'Hello world']
 
+# Where k is greater than the length of the linked list
+def test_k_is_greater_than_length(list_many):
+    assert list_many.kth_from_end(20) == 'K is out of range'
+
+# Where k and the length of the list are the same
+def test_k_is_same_length(list_many):
+    assert list_many.kth_from_end(6) == 'K is out of range'
+
+# Where k is not a positive integer
+def test_k_is_negative(list_many):
+    assert list_many.kth_from_end(-4) == 'K is out of range'
+
+# Where the linked list is of a size 1
+def test_k_is_in_list_of_one(list_one):
+    assert list_one.kth_from_end(0) == 'Node_1'
+
+# “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+def test_k_is_happy():
+    new_list = LinkedList()
+    new_list.insert(2)
+    new_list.insert(8)
+    new_list.insert(3)
+    new_list.insert(1)
+    assert new_list.kth_from_end(2) == 3
+
+# Stretch Goal
+# implement a method that finds the node at the middle of the Linked List.
+def test_return_middle_even_number_of_nodes(list_many):
+    assert list_many.find_middle_node() == 'Node_3'
+
+def test_return_middle_odd_number_of_nodes(list_many):
+    list_many.append('Another_Node')
+    assert list_many.find_middle_node() == 'Node_2'
+
+
 # def __str__(self):
 #     as_string = 'linked_list: '
 #     current = self.head
 #     while current:
 #         as_string += f""
-
-
-
-# creates linked lists of varrying numbers of nodes:
-# one node
-@pytest.fixture()
-def list_one():
-    empty_list = Linked_List()
-    empty_list.insert('Node_1')
-    return empty_list
-
-# two nodes
-@pytest.fixture()
-def list_two():
-    empty_list = Linked_List()
-    empty_list.insert('Node_1')
-    empty_list.insert('Node_2')
-    return empty_list
-
-# six nodes
-@pytest.fixture()
-def list_many():
-    empty_list = Linked_List()
-    empty_list.insert('Node_1')
-    empty_list.insert('Node_2')
-    empty_list.insert('Node_3')
-    empty_list.insert('Node_4')
-    empty_list.insert('Node_5')
-    empty_list.insert('Node_6')
-    return empty_list
-
-# ten nodes
-@pytest.fixture()
-def list_ten_integer():
-    empty_list = Linked_List()
-    empty_list.insert(1)
-    empty_list.insert(2)
-    empty_list.insert(3)
-    empty_list.insert(4)
-    empty_list.insert(5)
-    empty_list.insert(6)
-    empty_list.insert(7)
-    empty_list.insert(8)
-    empty_list.insert(9)
-    empty_list.insert(10)
-    return empty_list
 
