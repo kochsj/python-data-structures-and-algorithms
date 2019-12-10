@@ -1,5 +1,5 @@
 import pytest
-from linked_list import Linked_List, Node
+from linked_list import Node, Linked_List
 
 # Can successfully instantiate an empty linked list
 def test_empty_linked_list():
@@ -57,6 +57,38 @@ def test_print_list_of_items_two(list_two):
 
 def test_print_list_of_items_many(list_many):
     assert list_many.__str__() == "The values of this list are ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1']. A total of 6 nodes."
+
+
+# Can successfully add a node to the end of the linked list
+def test_app_ll_one(list_one):
+    list_one.append('Node_X')
+    assert list_one.return_list() == ['Node_1', 'Node_X']
+
+def test_app_ll_two(list_two):
+    list_two.append('Node_X')
+    assert list_two.return_list() == ['Node_2', 'Node_1', 'Node_X']
+
+def test_app_ll_many(list_many):
+    list_many.append('Node_X')
+    assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1', 'Node_X']
+
+# Can successfully add multiple nodes to the end of a linked list
+def test_app_ll_one(list_one):
+    list_one.append('Node_X')
+    assert list_one.return_list() == ['Node_1', 'Node_X']
+
+def test_app_ll_two(list_two):
+    list_two.append('Node_X')
+    assert list_two.return_list() == ['Node_2', 'Node_1', 'Node_X']
+
+def test_app_ll_many(list_many):
+    list_many.append('Node_X')
+    assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1', 'Node_X']
+
+# Can successfully insert a node before a node located i the middle of a linked list
+# Can successfully insert a node before the first node of a linked list
+# Can successfully insert after a node in the middle of the linked list
+# Can successfully insert a node after the last node of the linked list
 
 
 # creates linked lists of varrying numbers of nodes:
