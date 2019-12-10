@@ -1,4 +1,4 @@
-class Linked_List:
+class LinkedList:
     """
     Creates an instance of a linked list
     Optional parameter: head
@@ -37,6 +37,7 @@ class Linked_List:
             else:
                 current = current.next_node
         return False
+
     def return_list(self):
         try:
             current = self.head
@@ -47,6 +48,7 @@ class Linked_List:
             return collection_of_values
         except TypeError:
             return 'For testing, Please input strings.'
+
     # .append(value) which adds a new node with the given value to the end of the list
     def append(self, value):
         node = Node(value)
@@ -71,13 +73,36 @@ class Linked_List:
                 break
 
     # .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
-    def insert_after(self, value, new_value):
+    def insert_after(self, target, new_value):
         node = Node(new_value)
         current = self.head
-        while current.value != value:
+        while current.value != target:
             current = current.next_node
         node.next_node = current.next_node
         current.next_node = node
+
+    def kth_from_end(self, k):
+        value_list = []
+        current = self.head
+        while current.next_node:
+            value_list.append(current.value)
+            current = current.next_node
+        value_list.append(current.value)
+        if 0 <= k < len(value_list):
+            return value_list[-(k+1)]
+        else:
+            return 'K is out of range'
+
+    def find_middle_node(self):
+        value_list = []
+        current = self.head
+        while current.next_node:
+            value_list.append(current.value)
+            current = current.next_node
+        value_list.append(current.value)
+        middle = (len(value_list)+1)//2
+        return value_list[middle]
+
 # at any time you know 4 things. where you are, 'who' is next, and the values of both. head is a Node. head.value would be the value
 class Node:
     """
@@ -99,7 +124,7 @@ class Node:
         self.next_node = new_next
 
 if __name__ == "__main__":
-    empty_list = Linked_List()
+    empty_list = LinkedList()
     empty_list.insert('Node_1')
     empty_list.insert('Node_2')
     empty_list.append('Node_X')
