@@ -47,6 +47,29 @@ class Linked_List:
             return collection_of_values
         except TypeError:
             return 'For testing, Please input strings.'
+    # .append(value) which adds a new node with the given value to the end of the list
+    def append(self, value):
+        idx, current, new_nodes = 0, self.head, []
+        while idx < len(value):
+            if idx == (len(value) - 1):
+                new_nodes.append(Node(value[idx]))
+            else:
+                new_node = Node(value[idx], value[idx+1])
+                new_nodes.append(new_node)
+            idx += 1
+        idx = 0
+        while current:
+            if current.next_node == None:
+                current.next_node = new_nodes[idx]
+                break
+            current = new_nodes[idx]
+            idx += 1
+    # .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+    def insertBefore(self, value, new_value):
+        pass
+    # .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+    def insert_after(self, value, new_value):
+        pass
 
 class Node:
     """
@@ -67,7 +90,9 @@ class Node:
     def set_next(self, new_next):
         self.next_node = new_next
 
-empty_list = Linked_List()
-empty_list.insert('Node_1')
-empty_list.insert('Node_2')
-print(empty_list)
+if __name__ == "__main__":
+    empty_list = Linked_List()
+    empty_list.insert('Node_1')
+    empty_list.insert('Node_2')
+    empty_list.append('Node_X')
+    print(empty_list)
