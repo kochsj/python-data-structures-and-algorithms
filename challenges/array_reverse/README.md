@@ -1,9 +1,6 @@
 # Data-Structures-and-Algorithms
 
-# TABLE OF CONTENTS
-### 1. Code Challenge One - [Array_Reverse](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_reverse.py)
-### 2. Code Challenge One - [Array_Shift](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_shift)
-### Code Challenge One - Array_Reverse
+#### Code Challenge One - Array_Reverse
 Problem domain:
     Write a function that takes in a list and prints a new list in the reverse order
 Visual:
@@ -18,3 +15,7 @@ Algorithm:
 For this challenge I worked with Ting Luo. We set out to write a simple function (d.r.y) that matched the algorithm we determined beforehand. It appears that this algorithm would be O(N) performance.
 #### Solution
 ![array_reverse](/assets/array_reverse.jpg)
+
+
+## Other Challenges
+### 1. Code Challenge One - [Array_Reverse](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_reverse.py)<br>2. Code Challenge Two - [Array_Shift](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_shift)<br>3. Code Challenge Three - [Array_Binary_Search](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/array_binary_search)
