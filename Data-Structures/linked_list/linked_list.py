@@ -49,32 +49,40 @@ class Linked_List:
             return 'For testing, Please input strings.'
     # .append(value) which adds a new node with the given value to the end of the list
     def append(self, value):
-        idx, current, new_nodes = 0, self.head, []
-        while idx < len(value):
-            if idx == (len(value) - 1):
-                new_nodes.append(Node(value[idx]))
-            else:
-                new_node = Node(value[idx], value[idx+1])
-                new_nodes.append(new_node)
-            idx += 1
-        idx = 0
-        while current:
-            if current.next_node == None:
-                current.next_node = new_nodes[idx]
-                break
-            current = new_nodes[idx]
-            idx += 1
+        node = Node(value)
+        current = self.head
+        while current and current.next_node != None:
+            current = current.next_node
+        current.next_node = node
+
     # .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
-    def insertBefore(self, value, new_value):
-        pass
+    def insert_before(self, value, new_value):
+        node = Node(new_value)
+        current = self.head
+        if current.value == value:
+            node.next_node = self.head
+            self.head = node
+        while current.next_node and self.head.value != new_value:
+            if current.next_node.value != value:
+                current = current.next_node
+            else:
+                node.next_node = current.next_node
+                current.next_node = node
+                break
+
     # .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
     def insert_after(self, value, new_value):
-        pass
-
+        node = Node(new_value)
+        current = self.head
+        while current.value != value:
+            current = current.next_node
+        node.next_node = current.next_node
+        current.next_node = node
+# at any time you know 4 things. where you are, 'who' is next, and the values of both. head is a Node. head.value would be the value
 class Node:
     """
     Requires two parameters: value, next
-    Next = value pointing to the next node
+    Next_node = value pointing to the next node
     Value = value held in the node
     """
     def __init__(self, value, next_node=None):
