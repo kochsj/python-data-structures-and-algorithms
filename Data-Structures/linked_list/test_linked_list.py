@@ -73,22 +73,59 @@ def test_app_ll_many(list_many):
     assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1', 'Node_X']
 
 # Can successfully add multiple nodes to the end of a linked list
-def test_app_ll_one(list_one):
+def test_append_ll_two(list_one):
     list_one.append('Node_X')
-    assert list_one.return_list() == ['Node_1', 'Node_X']
+    list_one.append('Node_Y')
+    assert list_one.return_list() == ['Node_1', 'Node_X', 'Node_Y']
 
-def test_app_ll_two(list_two):
+def test_append_ll_three(list_two):
     list_two.append('Node_X')
-    assert list_two.return_list() == ['Node_2', 'Node_1', 'Node_X']
+    list_two.append('Node_Y')
+    list_two.append('Node_Y')
+    assert list_two.return_list() == ['Node_2', 'Node_1', 'Node_X', 'Node_Y', 'Node_Y']
 
-def test_app_ll_many(list_many):
+def test_append_ll_many(list_many):
     list_many.append('Node_X')
-    assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1', 'Node_X']
+    list_many.append('Node_Y')
+    list_many.append('Node_Y')
+    list_many.append('Node_Y')
+    list_many.append('Node_Y')
+    list_many.append('Node_Y')
+    assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1', 'Node_X', 'Node_Y', 'Node_Y', 'Node_Y', 'Node_Y', 'Node_Y']
 
-# Can successfully insert a node before a node located i the middle of a linked list
+# Can successfully insert a node before a node located in the middle of a linked list
+def test_insert_before_middle(list_many):
+    list_many.insert_before('Node_3', 'Hello world')
+    assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Hello world', 'Node_3', 'Node_2', 'Node_1']
+
+def test_insert_before_end(list_many):
+    list_many.insert_before('Node_1', 'Hello world')
+    assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Hello world', 'Node_1']
+
+def test_insert_before_second(list_many):
+    list_many.insert_before('Node_5', 'Hello world')
+    assert list_many.return_list() == ['Node_6', 'Hello world', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1']
+
 # Can successfully insert a node before the first node of a linked list
+def test_insert_before_first(list_many):
+    list_many.insert_before('Node_6', 'Hello world')
+    assert list_many.return_list() == ['Hello world','Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1']
+
 # Can successfully insert after a node in the middle of the linked list
+def test_insert_after_middle(list_many):
+    list_many.insert_after('Node_4', 'Hello world')
+    assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Hello world', 'Node_3', 'Node_2', 'Node_1']
 # Can successfully insert a node after the last node of the linked list
+def test_insert_after_end(list_many):
+    list_many.insert_after('Node_1', 'Hello world')
+    assert list_many.return_list() == ['Node_6', 'Node_5', 'Node_4', 'Node_3', 'Node_2', 'Node_1', 'Hello world']
+
+# def __str__(self):
+#     as_string = 'linked_list: '
+#     current = self.head
+#     while current:
+#         as_string += f""
+
 
 
 # creates linked lists of varrying numbers of nodes:
