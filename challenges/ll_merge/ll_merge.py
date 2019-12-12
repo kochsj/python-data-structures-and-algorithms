@@ -26,6 +26,10 @@ class LinkedList:
         self.head = new_node
 
     def return_list(self):
+        """
+        Returns a string concatenated string of all the values in the linked list.
+        Takes no parameters.
+        """
         current = self.head
         collection_of_values = ''
         while current:
@@ -47,6 +51,11 @@ class Node:
 
 
 def merge_list(ll_one, ll_two):
+    """
+    Merges two linked lists together as a zipped list.
+    Requires two linked list instances as parameters.
+    Returns reference to the newly created zipped list.
+    """
     new_ll = LinkedList(ll_one.head)
     current_one = ll_one.head
     current_two = ll_two.head
