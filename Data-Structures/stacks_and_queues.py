@@ -62,9 +62,12 @@ class Queue:
         else:
             self.end.next = new_node
             self.end = new_node
-            
+
     def dequeue(self):
-        pass
+        first_node = self.front
+        self.front = first_node.next
+        first_node.next = None
+        return first_node.value
 
     def peek(self):
         pass
