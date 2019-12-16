@@ -31,6 +31,33 @@ def stack_of_seven():
     new_stack.push('Seven')
     return new_stack
 
+@pytest.fixture()
+def queue_of_one():
+    new_queue = Queue()
+    new_queue.enqueue('One')
+    return new_queue
+
+@pytest.fixture()
+def queue_of_four():
+    new_queue = Queue()
+    new_queue.enqueue('One')
+    new_queue.enqueue(2)
+    new_queue.enqueue('Three')
+    new_queue.enqueue(4)
+    return new_queue
+
+@pytest.fixture()
+def queue_of_eight():
+    new_queue = Queue()
+    new_queue.enqueue('One')
+    new_queue.enqueue(2)
+    new_queue.enqueue('Three')
+    new_queue.enqueue(4)
+    new_queue.enqueue('Five')
+    new_queue.enqueue(6)
+    new_queue.enqueue('Seven')
+    new_queue.enqueue(8)
+    return new_queue
 ##################################################################
 # Can successfully push onto a stack
 ##################################################################
@@ -137,20 +164,70 @@ def test_add_eight():
 ##################################################################
 # Can successfully dequeue out of a queue the expected value
 ##################################################################
-def test_none():
-    pass
+def test_dequeue_one(queue_of_one):
+    assert queue_of_one.dequeue() == 'One'
+
+def test_dequeue_four(queue_of_four):
+    queue_of_four.dequeue() # One
+    queue_of_four.dequeue() # 2
+    queue_of_four.dequeue() # Three
+    assert queue_of_four.dequeue() == 4
+
+def test_dequeue_eight(queue_of_eight):
+    queue_of_eight.dequeue() # One
+    queue_of_eight.dequeue() # 2
+    queue_of_eight.dequeue() # Three
+    queue_of_eight.dequeue() # 4
+    queue_of_eight.dequeue() # Five
+    queue_of_eight.dequeue() # 6
+    queue_of_eight.dequeue() # Seven
+    assert queue_of_eight.dequeue() == 8
 ##################################################################
 # Can successfully peek into a queue, seeing the expected value
 ##################################################################
-def test_none():
-    pass
+def test_peek_none():
+    new_queue = Queue()
+    assert new_queue.peek() == None
+
+def test_peek_third(queue_of_four):
+    queue_of_four.dequeue() # One
+    queue_of_four.dequeue() # 2
+    assert queue_of_four.peek() == 'Three'
+    
+def test_peek_remove_four(queue_of_eight):
+    queue_of_eight.dequeue() #one
+    queue_of_eight.dequeue() # 2
+    queue_of_eight.dequeue() # Three
+    queue_of_eight.dequeue() # 4
+    assert queue_of_eight.peek() == 'Five'
 ##################################################################
 # Can successfully empty a queue after multiple dequeues
 ##################################################################
-def test_none():
-    pass
+def test_is_empty_dequeue_none():
+    new_queue = Queue()
+    new_queue.dequeue()
+    assert new_queue.is_empty() == True
+
+def test_is_empty_dequeue_one(queue_of_one):
+    assert queue_of_one.is_empty() == False
+    queue_of_one.dequeue() # One
+    assert queue_of_one.is_empty() == True
+
+def test_is_empty_dequeue_eight(queue_of_eight):
+    assert queue_of_eight.is_empty() == False
+    queue_of_eight.dequeue() # One
+    queue_of_eight.dequeue() # 2
+    queue_of_eight.dequeue() # Three
+    queue_of_eight.dequeue() # 4
+    assert queue_of_eight.is_empty() == False
+    queue_of_eight.dequeue() # Five
+    queue_of_eight.dequeue() # 6
+    queue_of_eight.dequeue() # Seven
+    queue_of_eight.dequeue() # 8
+    assert queue_of_eight.is_empty() == True
 ##################################################################
 # Can successfully instantiate an empty queue
 ##################################################################
 def test_none():
-    pass
+    new_queue = Queue()
+    assert isinstance(new_queue, Queue)

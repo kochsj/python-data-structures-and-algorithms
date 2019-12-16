@@ -73,13 +73,19 @@ class Queue:
             self.end = new_node
 
     def dequeue(self):
-        first_node = self.front
-        self.front = first_node.next
-        first_node.next = None
-        return first_node.value
+        try:
+            first_node = self.front
+            self.front = first_node.next
+            first_node.next = None
+            return first_node.value
+        except AttributeError:
+            return None
 
     def peek(self):
-        return self.front.value
+        try:
+            return self.front.value
+        except AttributeError:
+            return None
 
     def is_empty(self):
         if self.front == None:
