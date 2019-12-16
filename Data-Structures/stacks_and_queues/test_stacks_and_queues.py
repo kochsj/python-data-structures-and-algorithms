@@ -98,20 +98,42 @@ def test_many_peek(stack_of_four):
 ##################################################################
 # Can successfully instantiate an empty stack
 ##################################################################
-def test_none():
+def test_empty_stack():
     new_stack = Stack()
-    assert new_stack == 'This is an instance of a Stack'
+    assert new_stack.top == None
 
 ##################################################################
 # Can successfully enqueue into a queue
 ##################################################################
-def test_none():
-    pass
+def test_enqueue_one():
+    new_queue = Queue()
+    new_queue.enqueue('One')
+    assert new_queue.front.value == 'One'
 ##################################################################
 # Can successfully enqueue multiple values into a queue
 ##################################################################
-def test_none():
-    pass
+def test_add_four():
+    new_queue = Queue()
+    new_queue.enqueue('One')
+    new_queue.enqueue(2)
+    new_queue.enqueue('Three')
+    new_queue.enqueue(4)
+    assert new_queue.front.value == 'One'
+    assert new_queue.end.value == 4
+
+def test_add_eight():
+    new_queue = Queue()
+    new_queue.enqueue('One')
+    new_queue.enqueue(2)
+    new_queue.enqueue('Three')
+    new_queue.enqueue(4)
+    new_queue.enqueue('Five')
+    new_queue.enqueue(6)
+    new_queue.enqueue('Seven')
+    new_queue.enqueue(8)
+    assert new_queue.front.value == 'One'
+    assert new_queue.end.value == 8
+
 ##################################################################
 # Can successfully dequeue out of a queue the expected value
 ##################################################################
