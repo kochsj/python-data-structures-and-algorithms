@@ -37,9 +37,9 @@ class Stack:
 
     def is_empty(self):
         if self.top = None:
-            return False
-        else:
             return True
+        else:
+            return False
 
 class Queue:
     """
@@ -70,7 +70,10 @@ class Queue:
         return first_node.value
 
     def peek(self):
-        pass
+        return self.front.value
 
     def is_empty(self):
-        pass
+        if self.front = None:
+            return True
+        else:
+            return False
