@@ -52,10 +52,17 @@ class Queue:
     """
     def __init__(self, front=None):
         self.front = front
+        self.end = None
     
     def enqueue(self, value):
-        pass
-
+        new_node = Node(value)
+        if self.end == None:
+            self.front = new_node
+            self.end = new_node
+        else:
+            self.end.next = new_node
+            self.end = new_node
+            
     def dequeue(self):
         pass
 
