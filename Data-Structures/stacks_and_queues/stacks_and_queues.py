@@ -22,21 +22,30 @@ class Stack:
     def __init__(self, top=None):
         self.top = top
 
+    def __repr__(self):
+        return 'This is an instance of a Stack'
+
     def push(self, value):
         new_node = Node(value, self.top)
         self.top = new_node
 
     def pop(self):
-        top_node = self.top
-        self.top = top_node.next
-        top_node.next = None
-        return top_node.value
+        try:
+            top_node = self.top
+            self.top = top_node.next
+            top_node.next = None
+            return top_node.value
+        except AttributeError:
+            return None
     
     def peek(self):
-        return self.top.value
+        try:
+            return self.top.value
+        except AttributeError:
+            return None
 
     def is_empty(self):
-        if self.top = None:
+        if self.top == None:
             return True
         else:
             return False
@@ -73,7 +82,11 @@ class Queue:
         return self.front.value
 
     def is_empty(self):
-        if self.front = None:
+        if self.front == None:
             return True
         else:
             return False
+
+if __name__ == "__main__":
+    new_stack = Stack()
+    print(new_stack)
