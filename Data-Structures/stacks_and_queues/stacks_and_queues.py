@@ -80,7 +80,6 @@ class Queue:
             return first_node.value
         except AttributeError:
             return None
-
     def peek(self):
         try:
             return self.front.value
