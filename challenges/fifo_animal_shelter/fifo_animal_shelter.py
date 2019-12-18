@@ -1,9 +1,17 @@
 class Dog:
+    """
+    Takes no parameters
+    Creates an instance of a Dog with name and next properties
+    """
     def __init__(self):
         self.name = 'Ima dog'
         self.next = None
 
 class Cat:
+    """
+    Takes no parameters
+    Creates an instance of a Cat with name and next properties
+    """
     def __init__(self):
         self.name = 'Ima cat'
         self.next =  None
@@ -12,6 +20,13 @@ class Cat:
 # Actual Queue
 #######################################################
 class AnimalShelter:
+    """
+    Class constructor for a queue of 'animals'
+    Takes no parameters. Creates an instance of an AnimalShelter with front and end properties.
+    Has two methods, enqueue and dequeue.
+    Enqueue('cat'/'dog') - Adds a dog or cat to the 'end' of the queue
+    Dequeue(['cat'/'dog']) - Removes the cat or dog closest to the front of the queue. Takes an optional parameter, cat or dog, that will return the first in the queue.
+    """
     def __init__(self):
         self.front = None
         self.end = None
