@@ -10,7 +10,9 @@ Queues only have access to the enqueue and dequeue methods can can not be traver
 
 Enqueue - Adds an animal to the end of the queue. O(1) performance.
 
-Dequeue - Removes an animal to the front of the queue. O(1) performance. 
+Dequeue - Removes an animal to the front of the queue. O(1) performance.
+
+![FIFO Animal Shelter](../../assets/FIFO_animal_shelter.jpeg)
 
 ## Getting Started
 Running tests is straight forward and involves using pytest.
