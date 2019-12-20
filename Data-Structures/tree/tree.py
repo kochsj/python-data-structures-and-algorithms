@@ -79,6 +79,7 @@ class BinaryTree:
             return arr
         except AttributeError:
             return "A root element parameter is required. Please invoke the in_order method with a root node as an arguement."
+
 class BinarySearchTree(BinaryTree):
     def add(self, value):
         """
@@ -114,5 +115,29 @@ class BinarySearchTree(BinaryTree):
         Traverses the tree untill it reaches a node with the value that was sent in as an arguement
         Returns True or False if the value is in the tree at least once
         """
-
+        if self.root.value != None:
+            current = self.root
+            if current.value == value:
+                return True
+            else:
+                while current:
+                    if current.value == value:
+                        return True
+                    elif value < current.value:
+                        if current.left:
+                            current = current.left
+                            if current.value == value:
+                                return True
+                        else:
+                            return False
+                    elif value > current.value:
+                        if current.right:
+                            current = current.right
+                            if current.value == value:
+                                return True
+                        else:
+                            return False          
+        else:
+            return False
+      
                     

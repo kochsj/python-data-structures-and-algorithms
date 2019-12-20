@@ -114,3 +114,20 @@ def test_in_order_ten(binary_search_tree_ten):
 def test_post_order_ten(binary_search_tree_ten):
     expected = [2,1,3,5,13,15,90,100,20,10]
     assert binary_search_tree_ten.post_order(binary_search_tree_ten.root) == expected
+
+#################################################################################
+# Can sucessfully search for a given value                                      #
+#################################################################################
+def test_contains_tree_of_ten(binary_search_tree_ten):
+    expected = True
+    assert binary_search_tree_ten.contains(10) == expected
+    assert binary_search_tree_ten.contains(2) == expected
+    assert binary_search_tree_ten.contains(1) == expected
+    assert binary_search_tree_ten.contains(3) == expected
+    assert binary_search_tree_ten.contains(5) == expected
+    assert binary_search_tree_ten.contains(13) == expected
+    assert binary_search_tree_ten.contains(15) == expected
+    assert binary_search_tree_ten.contains(90) == expected
+    assert binary_search_tree_ten.contains(100) == expected
+    assert binary_search_tree_ten.contains(20) == expected
+    assert binary_search_tree_ten.contains(60) == False

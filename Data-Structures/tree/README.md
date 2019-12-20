@@ -46,10 +46,49 @@ Running tests:
 ```
 $ pytest
 ```
-## Functionality/Architecture
+## Approach & Efficiency
+In this module we take a recursive approach to traversing the trees. Conditionals qualify when the recursion ends. If there are no more left nodes or right nodes for example. 
 
+We are able to add to the BST with O(height) time efficency. We can search for a value with O(log(n)) time efficency. Trees are O(n) space efficency. 
+
+## API
+This module has a BinaryTree class and BinarySearchTree sub-class publicly available. BinaryTrees have three methods available; pre_order, post_order, and in_order
+```
+pre_order(root, arr):
+    Method that takes no parameters.
+    Returns an array of the values, ordered from the start, 
+    going far left, then finishing to the right.
+```
+```
+in_order(root, arr):
+    Method that takes no parameters.
+    Returns an array of the values, ordered starting from the far left,
+     traversing to the far right, then finishing to at the root.
+```
+```
+post_order(root, arr):
+    Method that takes no parameters.
+    Returns an array of the values, ordered starting from the far left,
+    traversing to the top, then finishing to the right.
+```
+
+BinarySearchTrees are a sub-class of the BinaryTree and have two methods publicly available: add and contains.
+```
+add(value):
+    Method that accepts one value.
+    Adds a node to the binary search tree
+    Conditionals that check if the node's value is greater than or less than the "top" node
+    Greater values go to the right. Lesser values go to the left.
+    Continues until leaf is hit
+```
+```
+contains(value):
+    Method that accepts one value.
+    Traverses the tree untill it reaches a node with the value that was sent in as an arguement
+    Returns True or False if the value is in the tree 
+```
 
 ## Change Log
-Sun Dec 15 2019 18:42:41<br>Created Node, Stack, and Queue classes. Wrote testing for adding, removing, and reading the classes.
+Thu Dec 19 2019 19:50:08<br>Created Node, Stack, and Queue classes. Wrote testing for adding, removing, and reading the classes.
 
 
