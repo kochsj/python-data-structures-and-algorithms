@@ -19,7 +19,12 @@ def binary_search_tree_ten():
     new_tree.add(2)
     new_tree.add(90)
     return new_tree
-    
+
+# @pytest.fixture(autouse=True)
+# def reset_arr():
+#     arr = []
+#     return arr
+
 ################################################################################
 # Can successfully instantiate an empty tree                                   #
 ################################################################################
@@ -79,21 +84,33 @@ def test_binary_search_tree_add_ten():
 #################################################################################
 # Can successfully return a collection from a pre_order traversal               #
 #################################################################################
-@pytest.mark.skip()
+# @pytest.mark.skip()
+def test_pre_order_one():
+    new_tree = BinarySearchTree()
+    new_tree.add(10)
+    expected = [10]
+    assert new_tree.pre_order(new_tree.root) == expected
+# @pytest.mark.skip()
+def test_pre_order_one_again():
+    new_tree = BinarySearchTree()
+    new_tree.add(10)
+    expected = [10]
+    assert new_tree.pre_order(new_tree.root) == expected
+# @pytest.mark.skip()
 def test_pre_order_ten(binary_search_tree_ten):
     expected = [10,5,3,1,2,20,15,13,100,90]
     assert binary_search_tree_ten.pre_order(binary_search_tree_ten.root) == expected
 #################################################################################
 # Can successfully return a collection from an in_order traversal               #
 #################################################################################
-@pytest.mark.skip()
+# @pytest.mark.skip()
 def test_in_order_ten(binary_search_tree_ten):
-    expected = [1,3,2,5,10,13,15,90,100]
-    assert binary_search_tree_ten.in_order() == expected
+    expected = [1,2,3,5,10,13,15,20,90,100]
+    assert binary_search_tree_ten.in_order(binary_search_tree_ten.root) == expected
 #################################################################################
 # Can successfully return a collection from a post_order traversal              #
 #################################################################################
-@pytest.mark.skip()
+# @pytest.mark.skip()
 def test_post_order_ten(binary_search_tree_ten):
-    expected = [2,1,3,5,13,15,20,90,100,10]
-    assert binary_search_tree_ten.post_order() == expected
+    expected = [2,1,3,5,13,15,90,100,20,10]
+    assert binary_search_tree_ten.post_order(binary_search_tree_ten.root) == expected

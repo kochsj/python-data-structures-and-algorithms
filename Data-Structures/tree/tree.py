@@ -17,11 +17,14 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def pre_order(self, root, arr=[]):
+    def pre_order(self, root, arr=None):
         """
         Method that takes no parameters.
         Returns an array of the values, ordered from the start, going far left, then finishing to the right.
         """
+        if arr == None:
+            arr = []
+
         arr.append(root.value)
 
         if root.left:
@@ -29,19 +32,44 @@ class BinaryTree:
 
         if root.right:
             self.pre_order(root.right, arr)
+        
+        return arr
 
-    def post_order(self, arr=[]):
+    def post_order(self, root, arr=[]):
         """
         Method that takes no parameters.
         Returns an array of the values, ordered starting from the far left, traversing to the top, then finishing to the right.
         """
-        pass
-    def in_order(self, arr=[]):
+        if arr == None:
+            arr = []
+
+        if root.left:
+            self.post_order(root.left, arr)
+        
+        if root.right:
+            self.post_order(root.right, arr)
+        
+        arr.append(root.value)
+
+        return arr
+
+    def in_order(self, root, arr=[]):
         """
         Method that takes no parameters.
         Returns an array of the values, ordered starting from the far left, traversing to the far right, then finishing to at the root.
         """
-        pass
+        if arr == None:
+            arr = []
+
+        if root.left:
+            self.in_order(root.left, arr)
+        
+        arr.append(root.value)
+        
+        if root.right:
+            self.in_order(root.right, arr)
+        
+        return arr
 
 class BinarySearchTree(BinaryTree):
     def add(self, value):
