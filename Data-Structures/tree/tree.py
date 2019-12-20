@@ -17,60 +17,68 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def pre_order(self, root, arr=None):
+    def pre_order(self, root=None, arr=None):
         """
         Method that takes no parameters.
         Returns an array of the values, ordered from the start, going far left, then finishing to the right.
         """
-        if arr == None:
-            arr = []
+        try:
+            if arr == None:
+                arr = []
 
-        arr.append(root.value)
+            arr.append(root.value)
 
-        if root.left:
-            self.pre_order(root.left, arr)
+            if root.left:
+                self.pre_order(root.left, arr)
 
-        if root.right:
-            self.pre_order(root.right, arr)
-        
-        return arr
+            if root.right:
+                self.pre_order(root.right, arr)
+            
+            return arr
+        except AttributeError:
+            return "A root element parameter is required. Please invoke the pre_order method with a root node as an arguement."
 
-    def post_order(self, root, arr=[]):
+    def post_order(self, root=None, arr=[]):
         """
         Method that takes no parameters.
         Returns an array of the values, ordered starting from the far left, traversing to the top, then finishing to the right.
         """
-        if arr == None:
-            arr = []
+        try:
+            if arr == None:
+                arr = []
 
-        if root.left:
-            self.post_order(root.left, arr)
-        
-        if root.right:
-            self.post_order(root.right, arr)
-        
-        arr.append(root.value)
+            if root.left:
+                self.post_order(root.left, arr)
+            
+            if root.right:
+                self.post_order(root.right, arr)
+            
+            arr.append(root.value)
 
-        return arr
+            return arr
+        except AttributeError:
+            return "A root element parameter is required. Please invoke the post_order method with a root node as an arguement."
 
-    def in_order(self, root, arr=[]):
+    def in_order(self, root=None, arr=[]):
         """
         Method that takes no parameters.
         Returns an array of the values, ordered starting from the far left, traversing to the far right, then finishing to at the root.
         """
-        if arr == None:
-            arr = []
+        try:
+            if arr == None:
+                arr = []
 
-        if root.left:
-            self.in_order(root.left, arr)
-        
-        arr.append(root.value)
-        
-        if root.right:
-            self.in_order(root.right, arr)
-        
-        return arr
-
+            if root.left:
+                self.in_order(root.left, arr)
+            
+            arr.append(root.value)
+            
+            if root.right:
+                self.in_order(root.right, arr)
+            
+            return arr
+        except AttributeError:
+            return "A root element parameter is required. Please invoke the in_order method with a root node as an arguement."
 class BinarySearchTree(BinaryTree):
     def add(self, value):
         """
@@ -80,22 +88,25 @@ class BinarySearchTree(BinaryTree):
         Greater values go to the right. Lesser values go to the left.
         Continues until leaf is hit
         """
-        node = _Node(value)
-        if not self.root:
-            self.root = node
-        else:
-            top = self.root
-            while True:
-                if value < top.value and top.left:
-                    top = top.left
-                elif value < top.value:
-                    top.left = node
-                    return
-                elif value > top.value and top.right:
-                    top = top.right
-                else:
-                    top.right = node
-                    return
+        try:
+            node = _Node(value)
+            if not self.root:
+                self.root = node
+            else:
+                top = self.root
+                while True:
+                    if value < top.value and top.left:
+                        top = top.left
+                    elif value < top.value:
+                        top.left = node
+                        return
+                    elif value > top.value and top.right:
+                        top = top.right
+                    else:
+                        top.right = node
+                        return
+        except ValueError:
+            return "Please enter a valid integer for the BinarySearchTree."
     
     def contains(self, value):
         """
