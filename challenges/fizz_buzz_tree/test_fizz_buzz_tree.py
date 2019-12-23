@@ -40,3 +40,19 @@ def test_fizz_buzz_function(ten_tree):
     assert ten_tree.root.right.right.right.value == '101'
     assert ten_tree.root.right.right.right.right.value == 'FizzBuzz'
 
+def test_fizz_buzz_empty_tree():
+    tree = BinaryTree()
+    assert fizz_buzz_tree(tree) == "Empty Tree"
+
+def test_fizz_buzz_imbalanced_tree():
+    tree = BinaryTree()
+    tree.add(10)
+    tree.add(15)
+    tree.add(20)
+    tree.add(22)
+    tree.add(91)
+    tree.add(3000)
+    fizz_buzz_tree(tree)
+    assert tree.root.value == 'Buzz'
+    assert tree.root.right.right.right.right.right.value == 'FizzBuzz'
+
