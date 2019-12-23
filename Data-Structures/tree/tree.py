@@ -140,4 +140,16 @@ class BinarySearchTree(BinaryTree):
         else:
             return False
       
-                    
+class KAryTree:
+    def __init__(self, root=None, children=None):
+        self.root = root
+        self.children = children
+
+    def add(self, value, k): 
+        if self.root:
+            for i in range(k):
+                if self.f'child{i}':
+
+        else:
+            self.root = _Node(value)
+
