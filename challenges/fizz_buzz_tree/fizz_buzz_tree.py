@@ -28,16 +28,16 @@ class BinaryTree:
                 root.right = node
 
 
-def fizz_buzz_tree(tree, action=None):
-    root = tree.root or tree
+def fizz_buzz_tree(tree, root=None, action=None):
+    root = root or tree.root
     if not action:
         action = fizz_buzz_func
     if root:
         root.value = action(root.value)
         if root.left:
-            fizz_buzz_tree(root.left)
+            fizz_buzz_tree(tree, root.left)
         if root.right:
-            fizz_buzz_tree(root.right)      
+            fizz_buzz_tree(tree, root.right)      
     else:
         return "Empty Tree"
 

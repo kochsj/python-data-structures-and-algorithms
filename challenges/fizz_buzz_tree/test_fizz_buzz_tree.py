@@ -32,4 +32,11 @@ def test_pytest_fixture(ten_tree):
     assert ten_tree.root.right.right.right.value == 101
     assert ten_tree.root.right.right.right.right.value == 3000
 
+def test_fizz_buzz_function(ten_tree):
+    fizz_buzz_tree(ten_tree)
+    assert ten_tree.root.value == 'Buzz'
+    assert ten_tree.root.left.left.value == 'Fizz'
+    assert ten_tree.root.right.right.left.value == '16'
+    assert ten_tree.root.right.right.right.value == '101'
+    assert ten_tree.root.right.right.right.right.value == 'FizzBuzz'
 
