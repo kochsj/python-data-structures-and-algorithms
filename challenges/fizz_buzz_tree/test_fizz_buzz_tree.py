@@ -21,6 +21,8 @@ def ten_tree():
     tree.add(90)
     tree.add(16)
     tree.add(101)
+    tree.add(1)
+    tree.add(3000)
     return tree
 
 def test_pytest_fixture(ten_tree):
@@ -28,5 +30,6 @@ def test_pytest_fixture(ten_tree):
     assert ten_tree.root.left.left.value == 3
     assert ten_tree.root.right.right.left.value == 16
     assert ten_tree.root.right.right.right.value == 101
+    assert ten_tree.root.right.right.right.right.value == 3000
 
 

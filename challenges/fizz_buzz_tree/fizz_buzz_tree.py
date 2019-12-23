@@ -28,10 +28,28 @@ class BinaryTree:
                 root.right = node
 
 
-def fizz_buzz_tree():
-    pass
+def fizz_buzz_tree(tree, action=None):
+    root = tree.root or tree
+    if not action:
+        action = fizz_buzz_func
+    if root:
+        root.value = action(root.value)
+        if root.left:
+            fizz_buzz_tree(root.left)
+        if root.right:
+            fizz_buzz_tree(root.right)      
+    else:
+        return "Empty Tree"
 
-def fizz_buzz_func():
-    pass
+
+def fizz_buzz_func(value):
+    if value%3 == 0 and value%5 == 0:
+        return "FizzBuzz"
+    if value%3 == 0:
+        return "Fizz"
+    if value%5 == 0:
+        return "Buzz"
+    value = str(value)
+    return value
             
 
