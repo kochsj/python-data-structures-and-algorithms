@@ -10,7 +10,7 @@ class BinaryTree:
 
     def add(self, value, root=None):
         node = _Node(value)
-        root = self.root
+        root = root or self.root
 
         if not root:
             self.root = node
@@ -26,6 +26,12 @@ class BinaryTree:
                 self.add(value, root.right)
             else:
                 root.right = node
-                        
+
+
+def fizz_buzz_tree():
+    pass
+
+def fizz_buzz_func():
+    pass
             
 
