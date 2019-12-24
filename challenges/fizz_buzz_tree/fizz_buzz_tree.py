@@ -40,6 +40,7 @@ def fizz_buzz_tree(tree, root=None, action=None):
             fizz_buzz_tree(tree, root.right)      
     else:
         return "Empty Tree"
+    return tree
 
 
 def fizz_buzz_func(value):

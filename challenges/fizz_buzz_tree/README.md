@@ -51,10 +51,20 @@ Running tests:
 ```
 $ pytest
 ```
-## Functionality/Architecture
+
+## Approach & Efficiency
+It was decided that using a helper function was going to be the best way to make these functions readable. Reference to the original BinaryTree object has to be kept during recursive traversal of the binary tree, so a tree parameter is used in the fizz_buzz_tree function. The tree parameter is never mutated during the traversal and value reassignment which is important.
+
+The next parameter that is adjusted during traversal is the root parameter. This gives reference to the position in the stack that the function is operating on.
+
+At each step in the binary tree, before invoking the function again, the value is reassigned to the return value from the helper fiz_buzz_func. 
+
+Big O for this function is a factor O(n) for time, because every node in the tree must be accessed. More nodes means more time. This function is O(h) for space, as the height of the tree determines how far up the stack the function calls need to go before their 'left' and 'right' are completed and can be popped off the stack. 
  
+## Solution:
+![fizz_buzz_tree](../../assets/fizz_buzz.jpeg)
 
 ## Change Log
-
+Mon Dec 23 2019 15:49:50<br>Created fizz_buzz_tree function. Wrote testing for functionality and edge cases.
 
 

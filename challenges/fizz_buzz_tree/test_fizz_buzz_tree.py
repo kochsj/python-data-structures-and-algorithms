@@ -52,7 +52,7 @@ def test_fizz_buzz_imbalanced_tree():
     tree.add(22)
     tree.add(91)
     tree.add(3000)
-    fizz_buzz_tree(tree)
+    tree = fizz_buzz_tree(tree)
     assert tree.root.value == 'Buzz'
     assert tree.root.right.right.right.right.right.value == 'FizzBuzz'
 
