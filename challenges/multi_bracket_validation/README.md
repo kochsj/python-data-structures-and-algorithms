@@ -58,12 +58,16 @@ $ pytest
 ```
 
 ## Approach & Efficiency
- 
+For this module, the goal was to traverse the string that came into the function as input - for loop was used. Then conditionals were set up to check...<br>IF the character is an open bracket THEN add the character to a string of all the open brackets (open_brac variable).<br>IF the character is a closing bracket THEN check the end of the string (open_brac) and if the end of open_brac was the corresponding open bracket, continue the loop and remove the open bracket character from the open_brac string. 
+
+The for loop continues for the length of the string. At the end, if all the conditions are met along the way, one last conditional is checked. If the open_brac string that was storing all the open bracket characters is now empty... that means that all of the brackets were opened and were closed. Only then can the function return True.
+
+The BigO for this function is O(n) for both time and space. The entire input string is traversed each time the function is invoked. The bigger the input, the bigger the space and time.
  
 ## Solution:
-
+![Multiple_Bracket_Validation](../../assets/multi_bracket_validation.jpeg)
 
 ## Change Log
-
+Fri Dec 27 2019 14:06:20<br>Created multi_bracket_validation function. Tested edge cases; functioning as expected.
 
 

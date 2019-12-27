@@ -32,3 +32,6 @@ def test_with_words():
 
 def test_fail_in_middle():
     assert multi_bracket_validation('({[(])})') == False
+
+def test_big_string():
+    assert multi_bracket_validation('((((({{{{{[[[[[[(((((([[[[[[{{{((([[[{{{{(((([[[[({[((([[[]]])))]})]]]]))))}}}}]]])))}}}]]]]]]))))))]]]]]]}}}}})))))') == True
