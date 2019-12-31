@@ -1,19 +1,28 @@
-# Challenge - FizzBuzz Tree
+# Challenge - Breadth First (Binary Tree Traversal)
 
 **Author**: Stephen Koch
 **Version**: 1.0.0
 
 ## Overview
-In this module, we are writing a function "fizz_buzz_tree" that takes a binary tree of integers as an arguement and does "FizzBuzz" to the values in the binary tree.
+In this module, we are writing an additional method of the BinaryTree class called breadth_first. Breadth_first takes a binary tree of nodes as an arguement and returns a list of the values inside of those nodes; starting from the root and stretching the width of the tree left to right and top to bottom. 
 
-Looking at every value in the binary tree, our function will determine that, if a value is evenly divisible by 3 its value will be reassigned to "Fizz". If the value is evenly divisible by 5 then its value will be reassigned to "Buzz". If the value is both evenly divisible by 3 and by 5, then its value will be reassigned to "FizzBuzz". If none of these conditions are met, then our function will reassign the integer to a string of the same value.
+That is what "breadth first" is describing. The breadth of the tree starting at the top, going from left to right. First. Meaning before going to the next "level" in the height of the binary tree. Here is an example:
+```
+State of a given tree:
+      root: [2]
+           /   \
+         [7]   [5]
+        /  \      \
+      [2]  [6]     [9]
+          /  \     /
+        [5]  [11] [4]
 
-Example:
+Expected output from breadth_first method:
+  [2, 7, 5, 2, 6, 9, 5, 11, 4]
 ```
-Starting Values => [2] -> [3] -> [5] -> [10] -> [15] -> [19]
-After fizz_buzz_tree:
-Returns => ['2'] -> ['Fizz'] -> ['Buzz'] -> ['Buzz'] -> ['FizzBuzz'] -> ['19']
-```
+As you can see, the method is reading the value of each of the nodes in the tree, starting with the root's level, moving to the next level (7 and 5 -- left to right), then moving farther down to the next level (2, 6, and 9), and after that level we reach the final level (5, then 11, then 4).
+
+This is traversing a Binary Tree **breadth first**.
 
 ## Getting Started
 Running tests is straight forward and involves using pytest.
@@ -53,18 +62,18 @@ $ pytest
 ```
 
 ## Approach & Efficiency
-It was decided that using a helper function was going to be the best way to make these functions readable. Reference to the original BinaryTree object has to be kept during recursive traversal of the binary tree, so a tree parameter is used in the fizz_buzz_tree function. The tree parameter is never mutated during the traversal and value reassignment which is important.
+The most efficent way to keep track of each node on each level before moving on has to be by using a queue. When a node is reached that means that it is at the front of the queue. So it is then safe to remove it from the queue -- dequeue it. 
 
-The next parameter that is adjusted during traversal is the root parameter. This gives reference to the position in the stack that the function is operating on.
+When we remove the node from the queue, we want to take its value and append it to our list that is keeping track of all the values in the binary tree (breadth first). Additionally we need to add any and all the immediate children of the dequeued node to the end of the queue -- enqueue them.
 
-At each step in the binary tree, before invoking the function again, the value is reassigned to the return value from the helper fiz_buzz_func. 
+As nodes get removed from the queue, and their children are added, eventually the final "level" of the tree will be reached. Meaning to say that there are no further children, no further levels. So the nodes will be dequeued like normal and when the queue is empty, that is when we can return our list of values.
 
-Big O for this function is a factor O(n) for time, because every node in the tree must be accessed. More nodes means more time. This function is O(h) for space, as the height of the tree determines how far up the stack the function calls need to go before their 'left' and 'right' are completed and can be popped off the stack. 
+This method has a big O of O(n) for time and for space. Beacuse, every node in the tree has to have its value read before the list can be returned, the time will scale the same (n). Also, because we are creating a list of n values, there will be n space taken in memory.
  
 ## Solution:
-![fizz_buzz_tree](../../assets/fizz_buzz.jpeg)
+![fizz_buzz_tree](../../assets/breadth_first.jpeg)
 
 ## Change Log
-Mon Dec 23 2019 15:49:50<br>Created fizz_buzz_tree function. Wrote testing for functionality and edge cases.
+Mon Dec 30 2019 17:06:14<br>Created breadth_first method of the binary tree class. Wrote testing for proper functionality.
 
 
