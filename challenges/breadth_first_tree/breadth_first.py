@@ -22,7 +22,23 @@ class BinaryTree:
                     return
                 else:
                     q.enqueue(current.right)
+    def find_maximum_value(self):
+        if not self.root:
+            return None
 
+        q = Queue()
+        q.enqueue(self.root)
+        maximum_value = self.root.value
+
+        while not q.is_empty():
+            current = q.dequeue()
+            if current.value > maximum_value:
+                maximum_value = current.value
+            if current.left:
+                q.enqueue(current.left)
+            if current.right:
+                q.enqueue(current.right)
+        return maximum_value
 
     def breadth_first(self):
         if not self.root:
