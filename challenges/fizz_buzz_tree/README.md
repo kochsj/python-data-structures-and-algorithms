@@ -15,42 +15,6 @@ After fizz_buzz_tree:
 Returns => ['2'] -> ['Fizz'] -> ['Buzz'] -> ['Buzz'] -> ['FizzBuzz'] -> ['19']
 ```
 
-## Getting Started
-Running tests is straight forward and involves using pytest.
-
-First, make sure that you have python3 installed:
-```
-$ python3 --version
-Python 3.7.5
-```
-If you do not:
-```
-$ brew install python
-```
-You need to have the files locally. Click on the green clone or download button and Download ZIP:
-
-![Click_to_download](../../assets/Click_to_download.png)
-
-Navigate to your command line:
-```
-MacOS: Press command + space to open up the search feature
-Search for "terminal" - This is your default command line on MacOS.
-```
-In your command line, navigate to this directory:
-```
-$ cd ~  ##this is your root directory
-$ cd Downloads  ##by default: Downloads is a directory inside of your root; and where your file will be downloaded
-$ cd python_data_structures_and_algorithims ##and now you are in this directory
-```
-This module is running tests on given data imputs. Install [pytest](https://docs.pytest.org/en/latest/getting-started.html) to get started:
-Installing pytest:
-```
-$ pip install -U pytest
-```
-Running tests:
-```
-$ pytest
-```
 
 ## Approach & Efficiency
 It was decided that using a helper function was going to be the best way to make these functions readable. Reference to the original BinaryTree object has to be kept during recursive traversal of the binary tree, so a tree parameter is used in the fizz_buzz_tree function. The tree parameter is never mutated during the traversal and value reassignment which is important.
@@ -64,7 +28,7 @@ Big O for this function is a factor O(n) for time, because every node in the tre
 ## Solution:
 ![fizz_buzz_tree](../../assets/fizz_buzz.jpeg)
 
-## Change Log
-Mon Dec 23 2019 15:49:50<br>Created fizz_buzz_tree function. Wrote testing for functionality and edge cases.
+## Other Challenges
+### 1. Code Challenge One - [Array_Reverse](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_reverse.py)<br>2. Code Challenge Two - [Array_Shift](https://github.com/kochsj/python-data-structures-and-algorithms/challenges/array_shift)<br>3. Code Challenge Three - [Array_Binary_Search](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/array_binary_search)<br>4. Code Challenge Four - [Linked List Merge](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/ll_merge)<br>5. Code Challenge Five - [Queue with Stacks](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/queue_with_stacks)<br>6. Code Challenge Six - [FIFO Animal Shelter](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/fifo_animal_shelter)<br>7. Code Challenge Seven - [FizzBuzz Tree](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/fizz_buzz_tree)<br>8. Code Challenge Eight - [Multiple Bracket Validation](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/multi_bracket_validation)<br>9. Code Challenge Nine - [Binary Tree - Breadth_first_traversal & find_maximum_value](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/breadth_first_tree)<br>10. Code Challenge Ten - [Insertion Sort](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/challenges/insertion_sort)
 
 

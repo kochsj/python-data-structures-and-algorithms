@@ -12,38 +12,6 @@ Stacks are like a stack of plates. The first node being both the top and the bot
 
 Queues are like a line at a bank. The first node being the front of the queue and the end of the queue (line). As nodes are added, they are 'enqueued' and join the line. The new node is now the end of the queue and the first node is still the front of the queue. Each additional node becomes the end of the queue as the 'line' gets longer. When dequeuing from the queue, the front node is removed and the 'next in line' then becomes the front of the queue. Just like standing in line at a bank. 
 
-## Getting Started
-Running tests is straight forward and involves using pytest.
-
-First, make sure that you have python3 installed:
-```
-$ python3 --version
-Python 3.7.5
-```
-If you do not:
-```
-$ brew install python
-```
-You need to have the files locally. Click on the green clone or download button and Download ZIP:
-
-![Click_to_download](../../assets/Click_to_download.png)
-
-
-In your command line, navigate to this directory:
-```
-$ cd ~  ##this is your root directory
-$ cd Downloads  ##by default: Downloads is a directory inside of your root; and where your file will be downloaded
-$ cd python_data_structures_and_algorithims ##and now you are in this directory
-```
-This module is running tests on given data imputs. Install [pytest](https://docs.pytest.org/en/latest/getting-started.html) to get started:
-Installing pytest:
-```
-$ pip install -U pytest
-```
-Running tests:
-```
-$ pytest
-```
 ## Functionality/Architecture
 This application is running tests on Stacks and Queues. The sack class is defined, the queue class is defined and so is the node class.
 
@@ -63,5 +31,8 @@ Peek and is_empty - Both stacks and queues have peek and is_empty methods. The p
 
 ## Change Log
 Sun Dec 15 2019 18:42:41<br>Created Node, Stack, and Queue classes. Wrote testing for adding, removing, and reading the classes.
+
+## Other Data Structures
+### 1. [Linked List](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/Data-Structures/linked_list)<br>2. [Stacks and Queues](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/stacks_and_queues)<br>3. [Binary Tree](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/tree)
 
 
