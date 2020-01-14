@@ -7,7 +7,7 @@ def test_merge_sort_simple():
     assert lst == [1, 2, 3, 4, 5, 9]
 
 def test_blog_merge_sort():
-    lst = 3[8,4,23,42,16,15]
+    lst = [8,4,23,42,16,15]
     merge_sort(lst)
     assert lst == [4, 8, 15, 16, 23, 42]
 
