@@ -14,38 +14,6 @@ In a Binary Tree, each node can have between zero and two connections (edges), g
 
 In a Binary Search Tree (BST), the tree is 'organized' with a root node at the "top" and lesser values to the left and greater values to the right. This is true for every node in the BST.
 
-## Getting Started
-Running tests is straight forward and involves using pytest.
-
-First, make sure that you have python3 installed:
-```
-$ python3 --version
-Python 3.7.5
-```
-If you do not:
-```
-$ brew install python
-```
-You need to have the files locally. Click on the green clone or download button and Download ZIP:
-
-![Click_to_download](../../assets/Click_to_download.png)
-
-
-In your command line, navigate to this directory:
-```
-$ cd ~  ##this is your root directory
-$ cd Downloads  ##by default: Downloads is a directory inside of your root; and where your file will be downloaded
-$ cd python_data_structures_and_algorithims ##and now you are in this directory
-```
-This module is running tests on given data imputs. Install [pytest](https://docs.pytest.org/en/latest/getting-started.html) to get started:
-Installing pytest:
-```
-$ pip install -U pytest
-```
-Running tests:
-```
-$ pytest
-```
 ## Approach & Efficiency
 In this module we take a recursive approach to traversing the trees. Conditionals qualify when the recursion ends. If there are no more left nodes or right nodes for example. 
 
@@ -91,4 +59,6 @@ contains(value):
 ## Change Log
 Thu Dec 19 2019 19:50:08<br>Created Node, Stack, and Queue classes. Wrote testing for adding, removing, and reading the classes.
 
+## Other Data Structures
+### 1. [Linked List](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/Data-Structures/linked_list)<br>2. [Stacks and Queues](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/stacks_and_queues)<br>3. [Binary Tree](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/tree)
 

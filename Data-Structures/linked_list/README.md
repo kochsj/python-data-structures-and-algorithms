@@ -8,38 +8,6 @@ In this file of the data structures, linked lists are created and tested.
 
 A linked list is a reference to a sequence of 'Nodes'. A singly linked list has single references to other Nodes. Each Node is connected to another in the singly list, starting at the first or 'head' node and linking to the next node and then the next node until a referenced node is reached that has no next value linking it to any other nodes.
 
-## Getting Started
-Running tests is straight forward and involves using pytest.
-
-First, make sure that you have python3 installed:
-```
-$ python3 --version
-Python 3.7.5
-```
-If you do not:
-```
-$ brew install python
-```
-You need to have the files locally. Click on the green clone or download button and Download ZIP:
-
-![Click_to_download](assets/Click_to_download.png)
-
-
-In your command line, navigate to this directory:
-```
-$ cd ~  ##this is your root directory
-$ cd Downloads  ##by default: Downloads is a directory inside of your root; and where your file will be downloaded
-$ cd python_data_structures_and_algorithims ##and now you are in this directory
-```
-This module is running tests on given data imputs. Install [pytest](https://docs.pytest.org/en/latest/getting-started.html) to get started:
-Installing pytest:
-```
-$ pip install -U pytest
-```
-Running tests:
-```
-$ pytest
-```
 ## Functionality/Architecture
 This application is running tests on Linked Lists. The linked list class is defined and so is the node class.
 
@@ -57,10 +25,13 @@ Kth from end - A method of the linked list class. Accepts one parameter, 'k', re
 
 Find middle node - A method of the linked list class that finds the middle Node's value. Takes no parameters. This method traverses an entire instance of a linked list and creates a list of values. Taking the length of that value list and floor deviding by two gives a consistent middle (ceiling). Returns the value of the middle Node.
 
+## Solution
+![Class 07](../../assets/kth_value.jpeg)
+
 ## Change Log
 Sat Dec 07 2019 14:24:42<br>Created linked list and node classes. Developed tests to ensure proper functionality.
 
 Tue Dec 10 2019 13:37:24<br>Created new linked list methods. Append, insert_before, insert_after, kth_from_end, and find_the_middle. Devloped tests to ensure proper functionality.
 
-![Class 07](../../assets/kth_value.jpeg)
-
+## Other Data Structures
+### 1. [Linked List](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/Data-Structures/linked_list)<br>2. [Stacks and Queues](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/stacks_and_queues)<br>3. [Binary Tree](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/tree)
