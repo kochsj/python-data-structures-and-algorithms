@@ -1,6 +1,6 @@
 # Data-Structures-and-Algorithms - Challenge Ten
 
-# Insertion Sort
+# Insertion Sort - [Blog Post](blog.md)
 ### Problem domain
 This challenge asks us to write a function that takes a list of integers as an arguement. The function sorts the array in-place by using the insertion sort method. Sorting the integers starting at the 0 index with the lowest value and increasing in value untill the last index. 
 ### Challenge
