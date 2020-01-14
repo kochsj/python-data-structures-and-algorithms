@@ -2,12 +2,16 @@
 
 # Merge Sort - [Blog Post](blog.md)
 ### Problem domain
-This challenge asks us to write a function that takes a list of integers as an arguement. The function sorts the array in-place by using a merge sort algorithm.  
+This challenge asks us to write a function that takes a list of integers as an arguement. The function sorts the array in-place by using a merge sort algorithm. 
+
+The merge sort essientially breaks down the list into several smaller lists with length of 1 starting from one original ancestor list. This is done using recursion, and the result is a situation where a sorting helper function can decide which number comes first between 2 numbers and <u>merge</u> them into a parent's sub-list. As the sub-lists get sorted from the smallest sub-lists up to the original list, the left and right sides become sorted. Then it is a matter of sorting between just a right and a left.
+
+Please see the linked blog for a much more detailed explaination.
 ### Challenge
 Take a list and sort it in place.
 ```
 before: int_list = [8,4,23,42,16,15]
-$ insertion_sort(int_list)
+$ merge_sort(int_list)
 after: int_list == [4,8,15,16,23,42]
 ```
 ### Approach, Efficiency & Solution
