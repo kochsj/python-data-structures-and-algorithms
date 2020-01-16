@@ -43,3 +43,7 @@ def test_empty_list_quick_sort():
     quick_sort(lst, 0, 0)
     assert lst == []
 
+def test_travis_arr():
+    lst = [4,4,4]
+    quick_sort(lst,0,2)
+    assert lst == [4,4,4]

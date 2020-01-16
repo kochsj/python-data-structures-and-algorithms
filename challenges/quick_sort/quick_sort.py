@@ -8,6 +8,11 @@ def quick_sort(arr, left_index, right_index):
         quick_sort(arr, position + 1, right_index)
 
 def partition(arr, left_index, right_index):
+    """
+    By selecting a pivot value, the partition reorganizes the array with the pivot in the middle index
+    values to the left are lesser
+    values to the right are greater
+    """
     # set a pivot value as a point of reference
     pivot = arr[right_index]
 
