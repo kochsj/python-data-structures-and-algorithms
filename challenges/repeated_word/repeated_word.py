@@ -1,26 +1,30 @@
 import re
 
-# Write a function that accepts a lengthy string parameter.
-# Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
 def repeated_word(string):
+    """
+    Accepts a string as an arguement. 
+    Returns a list: [first_repeated_word, dictionary_of_all_words, sorted_list_of_most_frequent_words]
+    """
     string = re.sub(r'[^\w\s]', '', string)
-    words = {}
+    all_words = {}
     first_matching_word = ''
     most_frequent_words = []
 
-# Modify your function to return a count of each of the words in the provided string
+    # Modify your function to return a count of each of the words in the provided string
     for word in string.split():
+        word = word.lower()
         try:
-            words[word] += 1
+            all_words[word] += 1
             first_matching_word = first_matching_word or word
         except:
-            words[word] = 1
+            all_words[word] = 1
 
-# Modify your function to return a list of the words most frequently used in the provided string
-    for key in words:
-        most_frequent_words.append((words[key], key))
+    # Modify your function to return a list of the words most frequently used in the provided string
+    for key in all_words:
+        most_frequent_words.append((all_words[key], key))
     most_frequent_words.sort(reverse=True)
-    
+
+    # check if any words matched
     if first_matching_word:
-        return [first_matching_word, words, most_frequent_words]
-    return ["No repeating words", words, most_frequent_words]
+        return [first_matching_word, all_words, most_frequent_words]
+    return ["No repeating words found", all_words, most_frequent_words]
