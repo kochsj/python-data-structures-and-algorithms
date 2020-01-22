@@ -1,25 +1,29 @@
-# Data-Structures-and-Algorithms - Challenge Thirteen
+# Data-Structures-and-Algorithms - Challenge Fourteen
 
-# Repeating Word Search
+# Tree Intersection
 ### Problem domain
-This challenge asks us to write a function that takes a large string as an arguement and returns the first repeated word that is found.
+This challenge asks us to write a function that takes two strings as arguments and returns a list of the elements that both trees have in common.
 
 ### Challenge
-Take a string and iterate through the words in the string. Return the first instance of a repeated word.
+Traverse both trees keeping track of the values in each. Return a list of the elements that they have in common.
 ```
-$ string = "Once upon a time, there was a brave princess who..."
-$ result = repeated_word(string)
-$ result
-$ 'a'
+State of a given tree_one:      State of a given tree_two:
+      root: [2]                         root: [12]                           
+           /   \                             /   \
+         [5]   [25]                         [7]   [55]
+        /  \      \                       /  \      \
+      [6]  [0]     [9]                  [2]  [6]     [100]
+          /  \     /                   /   \    \
+        [4]  [11] [100]               [5]   [4]   [0]
 ```
+```Returns a list: [2, 6, 100, 5, 4]```
+
 ### Approach & Efficiency
-The approach here is to get an iterable for all of the words in the string. A list is best suited iterable for storing all of the words from the string. Before storing the words, the original string needs to be cleaned up a bit.
+The approach here is to define a helper function that we can use to invoke recursively to traverse all of the nodes in each tree and add their values to a hash table. A hash table is good in this situation because when we need to check each node for IF that node is already in a collection... a hash table has O(1) time complexity to check. As apposed another O(n) implication with a list.
 
-We are using re - Python's regular expression package to substitue any punctuation with a null string. When the string is just words and spaces we can split the string using the String.split method. 
+We are passing a boolean into the tree_intersection recursive helper function that tells it when to check a conditional. After all of the nodes in tree one are checked and their values are added to our hash table, then we pass in True. True gets passed throughout the recursive traversal and checks if the node values are included in the hash table.
 
-We are returned a list of all of the words and can begin keeping track of what words we have seen and when we hit that first repeated word. Because we have a list of all words, we can iterate through them and append the words to new list. We check that new list for each iteration of the word-list. As soon as there is a match in the new list we return the word.
-
-The efficency here breaks down to is O(N) for time and O(N) for space.
+The efficency here breaks down to is O(N) for time (all nodes) and O(N) for space. The O(1) for time using a hash table to check if any value is included saves us here. As if the lookup was not O(1) we would be looking at at least O(n^2) for time.
 
 ### Solution
 
