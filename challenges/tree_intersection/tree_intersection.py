@@ -10,7 +10,8 @@ def tree_intersection(tree_1, tree_2):
         if second_tree:
             if ht.contains(node.value):
                 lst.append(node.value)
-        ht.add(node.value)
+        else:
+            ht.add(node.value)
 
     recurse_traverse(tree_1.root, False)
     recurse_traverse(tree_2.root, True)
