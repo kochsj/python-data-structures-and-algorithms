@@ -35,6 +35,29 @@ def test_edge_is_added():
     
     graph.add_edge(start, end, 3)
 
-    assert graph._adj_list[start][0].value == 'start'
-    assert graph._adj_list[start][1] == (end, 3)
+    assert graph._adj_list[start][0] == [start, end, 3]
 
+def test_get_nodes():
+    graph = Graph()
+    start = graph.add_node('start')
+    end = graph.add_node('end')
+
+    assert graph.get_nodes() == [start, end]
+
+def test_get_neighbors():
+    graph = Graph()
+    start = graph.add_node('start')
+    end = graph.add_node('end')
+
+    graph.add_edge(start, end, 3)
+
+    assert graph.get_neighbors(start) == [end, 3]
+    assert graph.get_nodes() == [start, end]
+
+def test_get_values():
+    graph = Graph()
+    start = graph.add_node('start')
+    end = graph.add_node('end')
+
+    assert graph.get_values(start) == 'start'
+    
