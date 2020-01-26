@@ -1,3 +1,5 @@
+import inspect, re
+
 class Graph:
     """
     [method] - add_node(value): adds a new vertex to the graph, returns the added vertex
@@ -9,6 +11,13 @@ class Graph:
     """
     def __init__(self):
         self._adj_list = {}
+
+        # stores reference to variable user assigned at init
+        name = inspect.getframeinfo(inspect.currentframe().f_back)[3][0].split()[0]
+        self.name = re.sub(r'[=]', '', name)
+
+    def __repr__(self):
+        return self.name
 
     def add_node(self, value):
         """
@@ -36,7 +45,7 @@ class Graph:
         No return
         """
         if start_vertex not in self._adj_list or end_vertex not in self._adj_list:
-            raise KeyError(f'{start_vertex.value} is not in {self}')
+            raise KeyError(f'{start_vertex} is not in {self}')
     
         adj_list = self._adj_list[start_vertex]
         for i in range(len(adj_list)):
@@ -70,6 +79,8 @@ class Graph:
 
     def get_nodes(self):
         """ Returns a list of the vertices in the Graph."""
+        if self.size() == 0:
+            return None
         return [vtx for vtx in self._adj_list]
 
     def get_neighbors(self, vertex):
@@ -96,4 +107,7 @@ class Vertex:
     """
     def __init__(self, value):
         self.value = value
+
+    def __repr__(self):
+        return self.value
 
