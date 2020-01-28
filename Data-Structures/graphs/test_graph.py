@@ -35,7 +35,7 @@ def test_edge_is_added():
     
     graph.add_edge(start, end, 3)
 
-    assert graph._adj_list[start][0] == [start, end, 3]
+    assert graph._adj_list[start][0] == [start, (end, 3)]
 
 def test_get_nodes():
     graph = Graph()
@@ -53,7 +53,7 @@ def test_get_neighbors():
 
     graph.add_edge(start, end, 3)
 
-    assert graph.get_neighbors(start) == [end, 3]
+    assert graph.get_neighbors(start) == [(end, 3)]
     assert graph.get_nodes() == [start, end]
 
 def test_get_many_neighbors():
@@ -67,13 +67,13 @@ def test_get_many_neighbors():
     graph.add_edge(start, middle, 33)
     graph.add_edge(start, other, 344)
 
-    assert graph.get_neighbors(start) == [end, 3, middle, 33, other, 344]
+    assert graph.get_neighbors(start) == [(end, 3), (middle, 33), (other, 344)]
 
 def test_empty_graph():
     graph = Graph()
 
     assert graph.size() == 0
-    assert graph.get_neighbors('') == None
+    assert graph.get_neighbors('') == []
     assert graph.get_nodes() == None
 
 def test_one_vertex_graph():
@@ -83,7 +83,7 @@ def test_one_vertex_graph():
     graph.add_edge(start, start, 3)
 
     assert graph.size() == 1
-    assert graph.get_neighbors(start) == [start, 3]
+    assert graph.get_neighbors(start) == [(start, 3)]
     assert graph.get_nodes() == [start]
 
 def test_get_values():

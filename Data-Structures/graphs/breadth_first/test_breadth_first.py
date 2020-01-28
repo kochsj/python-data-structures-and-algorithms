@@ -1,8 +1,8 @@
-from breadth_first import Vertex, Graph
+from breadth_first import Vertex, NewGraph
 import pytest
 
 def test_no_edges():
-    graph = Graph()
+    graph = NewGraph()
 
     # add all nodes
     apple = graph.add_node('apple')
@@ -15,7 +15,7 @@ def test_no_edges():
     assert graph.breadth_first(apple) == {apple}
 
 def test_breadth_first():
-    graph = Graph()
+    graph = NewGraph()
 
     # add all nodes
     apple = graph.add_node('apple')
@@ -52,7 +52,7 @@ def test_breadth_first():
 
 
 def test_directional_edges():
-    graph = Graph()
+    graph = NewGraph()
 
     # add all nodes
     apple = graph.add_node('apple')
