@@ -1,6 +1,6 @@
 # Data-Structures-and-Algorithms - Challenge Ten
 
-# Merge Sort - [Blog Post](blog.md)
+# Quick Sort - [Blog Post](blog.md)
 ### Problem domain
 This challenge asks us to write a function that takes a list of integers as an arguement. The function sorts the array in-place by using a quick sort algorithm. 
 
