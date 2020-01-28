@@ -49,14 +49,15 @@ Adding key/value pairs and getting values from the adjacency list is essentially
 
 
 ### API
-Our Graph has six public methods:
+Our Graph has seven public methods:
 
 1. add_node(value): adds a new vertex to the graph, returns the added vertex<br><br>
 2. add_edge(vertex1, vertex2, [weight]): adds new edge between two virtices, takes in two verticies, has ability to add weight<br><br>
 3. get_nodes( ) - returns all of the vertices as a collection<br><br>
 4. get_neighbors(vertex): returns a collection of vertices (with weights) connected to a vertex, takes in a vertex<br><br>
 5. get_values(vertex): returns the value from a given vertex<br><br>
-6. size( ) - returns number of vertices in Graph; integer
+6. size( ) - returns number of vertices in Graph; integer<br><br>
+7. breadth_first(vertex): traverses the graph starting from the given vertex, returns a list of nodes visited during traversal
 
 ## Other Data Structures
 ### 1. [Linked List](https://github.com/kochsj/python-data-structures-and-algorithms/tree/master/Data-Structures/linked_list)<br>2. [Stacks and Queues](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/stacks_and_queues)<br>3. [Binary Tree](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/tree)<br>4. [Hash Table](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/hashtable)<br>5. [Graph](https://github.com/kochsj/python-data-structures-and-algorithms/tree/stack-and-queue/Data-Structures/graphs)
