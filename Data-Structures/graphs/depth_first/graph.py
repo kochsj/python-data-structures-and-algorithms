@@ -26,7 +26,7 @@ class Graph:
         Parameters:
             [value] - value to be assigned to the vertex
         Returns: 
-            vertex - the vertex that was created
+            [vertex] - the vertex that was created
         """
         vertex = Vertex(value)
         try: 

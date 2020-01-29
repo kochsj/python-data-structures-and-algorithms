@@ -44,3 +44,4 @@ def made_graph():
     graph.add_edge(eggplant, dates, 70)
 
     return (graph, apple)
+

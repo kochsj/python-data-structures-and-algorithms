@@ -1,17 +1,20 @@
-# depth first pre order traversal
-
-# accepts and adj_list as a graph
-# Graphs have a root
-
 from graph import Graph, Vertex
 
 class NewGraph(Graph):
 
     def depth_first(self, root):
+        """
+        Pre-order depth-first traversal starting from the given "root" vertex, returns a list of nodes visited during traversal.
+        Parameters:
+            [vertex] - "root" vertex to start the depth-first traversal from
+        Return:
+            [list] - list of all the vertices visited during traversal. 
+        """
         visited_lst = []
         visited_lst.append(root)
 
         def recurse_traverse(node):
+            """Helper function to traverse using call stack"""
             neighbors = self.get_neighbors(node)
             print('neighbors', neighbors)
             for neighbor in neighbors:
