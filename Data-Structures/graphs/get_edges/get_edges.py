@@ -34,5 +34,5 @@ def get_edge(graph, cities):
 
     return f'{is_neighbor} : ${price}'
 
-    
-            
+
+# TODO: making an edge class       
