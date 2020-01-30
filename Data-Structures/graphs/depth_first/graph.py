@@ -55,6 +55,11 @@ class Graph:
             if adjacencies[0] == start_vertex:
                 adjacencies += [(end_vertex, weight)]
 
+    def add_double_edge(self, start_vertex, end_vertex, weight_to=0, weight_from=None):
+        weight_from = weight_to if weight_from == None else weight_from or 0
+        self.add_edge(start_vertex,end_vertex,weight_to)
+        self.add_edge(start_vertex,end_vertex,weight_from)
+
 
     def size(self):
         """
